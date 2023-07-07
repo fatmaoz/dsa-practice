@@ -1,4 +1,4 @@
-
+package longest_even_word_length;
 
 /*
 Consider a string, sentence, of words separated by spaces where each word is a substring consisting of English
