@@ -5,7 +5,7 @@ public class BreakPalindrome {
 
         public static void main(String[] args) {
             System.out.println(breakPalindrome("aaabbaaa"));  // Output: aaaabaaa
-            System.out.println(breakPalindrome("aaa"));  // Output: IMPOSSIBLE
+            System.out.println(breakPalindrome("aaaaabaaaaa"));  // Output: IMPOSSIBLE
         }
 
         public static String breakPalindrome(String palindromeStr) {
@@ -26,7 +26,7 @@ public class BreakPalindrome {
                 return "IMPOSSIBLE";
             }
 
-            chars[chars.length - 1] = 'b';
+         chars[chars.length - 1] = 'b';// can be removed
             return new String(chars);
         }
     }
