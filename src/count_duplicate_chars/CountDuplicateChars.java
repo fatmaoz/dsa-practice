@@ -7,12 +7,16 @@ public class CountDuplicateChars {
 
     public static void main(String[] args) {
         System.out.println(countDuplicates("abcde"));
+        System.out.println(countDuplicates2("abcde"));
         System.out.println(countDuplicates("aabbcde"));
+        System.out.println(countDuplicates2("aabbcde"));
         System.out.println(countDuplicates("aabBcde"));
+        System.out.println(countDuplicates2("aabBcde"));
         System.out.println(countDuplicates("indivisibility"));
-        System.out.println(countDuplicates("Indivisibilities"));
-        System.out.println(countDuplicates("aA11"));
-        System.out.println(countDuplicates("ABBA"));
+        System.out.println(countDuplicates2("indivisibility"));
+//        System.out.println(countDuplicates("Indivisibilities"));
+//        System.out.println(countDuplicates("aA11"));
+//        System.out.println(countDuplicates("ABBA"));
     }
 
 
@@ -47,6 +51,27 @@ public class CountDuplicateChars {
         for (int count : charCount.values()) {
             if (count > 1) {
                 duplicateCount++;
+            }
+        }
+
+        return duplicateCount;
+    }
+
+    public static int countDuplicates2(String input) {
+        input = input.toLowerCase();
+        int[] lowercaseCharacters = new int[26];
+
+        int duplicateCount = 0;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isLowerCase(c)) {
+                int index = c - 'a';
+
+                lowercaseCharacters[index]++;
+
+                if (lowercaseCharacters[index] == 2) {
+                    duplicateCount++;
+                }
             }
         }
 
