@@ -34,6 +34,7 @@ public class ValidAnagram {
 
         char[] sArray = source.toCharArray();
         char[] tArray = target.toCharArray();
+
         Arrays.sort(sArray);
         Arrays.sort(tArray);
 
